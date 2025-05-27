@@ -1,0 +1,27 @@
+{
+  "name": "yadnom-backend",
+  "version": "1.0.0",
+  "description": "Yadnom - a work management system inspired by Monday.com",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --ignore \"./data\" server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server:dev": "nodemon server.js",
+    "server:prod": "set NODE_ENV=production&node server.js",
+    "server:prod:mac": "export NODE_ENV=production && node server.js"
+  },
+  "author": "Ofir Rozanes, Gal Begoun",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cryptr": "^6.0.3",
+    "express": "^4.21.2",
+    "mongodb": "^6.16.0",
+    "nodemon": "^3.1.10",
+    "socket.io": "^4.8.1"
+  }
+}
