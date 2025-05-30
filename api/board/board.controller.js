@@ -1,5 +1,5 @@
 
-import { boardService } from "./board.service.js"
+import { boardService, getDefaultBoard } from "./board.service.js"
 import { loggerService } from "../../services/logger.service.js"
 
 export async function getBoards(req, res) {
@@ -32,39 +32,34 @@ export async function updateBoard(req, res) {
     const boardToSave = { ...req.body }
 
     try {
-            const savedBoard = await boardService.save(boardToSave)
+        const savedBoard = await boardService.save(boardToSave)
         res.send(savedBoard)
-        } catch(err) {
-            loggerService.error(`Couldn't save board`, err)
-            res.status(400).send(`Couldn't save board`)
-        }
+    } catch (err) {
+        loggerService.error(`Couldn't save board`, err)
+        res.status(400).send(`Couldn't save board`)
     }
+}
 
-    export async function addBoard(req, res) {
-        const boardToSave = {
-            title: req.body.title,
-            severity: +req.body.severity,
-            creator: req.body.creator,
-            creationDate: Date.now(),
-        }
+export async function addBoard(req, res) {
+    const boardToSave = getDefaultBoard(req.body.title || 'New Board')
 
-        try {
-            const savedBoard = await boardService.save(boardToSave)
-            res.send(savedBoard)
-        } catch (err) {
-            loggerService.error(`Couldn't save board`, err)
-            res.status(400).send(`Couldn't save board`)
-        }
+    try {
+        const savedBoard = await boardService.save(boardToSave)
+        res.send(savedBoard)
+    } catch (err) {
+        loggerService.error(`Couldn't save board`, err)
+        res.status(400).send(`Couldn't save board`)
     }
+}
 
-    export async function removeBoard(req, res) {
-        const { boardId } = req.params
-        try {
-            const t = await boardService.remove(boardId, req.loggedinUser)
-            console.log('t:', t)
-            res.send('OK')
-        } catch (err) {
-            loggerService.error(`Couldn't remove board: ${boardId}`, err)
-            res.status(400).send(`Couldn't remove board`)
-        }
+export async function removeBoard(req, res) {
+    const { boardId } = req.params
+    try {
+        const t = await boardService.remove(boardId, req.loggedinUser)
+        console.log('t:', t)
+        res.send('OK')
+    } catch (err) {
+        loggerService.error(`Couldn't remove board: ${boardId}`, err)
+        res.status(400).send(`Couldn't remove board`)
     }
+}
