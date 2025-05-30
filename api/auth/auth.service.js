@@ -56,7 +56,7 @@ async function login(username, password) {
 async function signup({ username, password, fullname }) {
     const saltRounds = 10
 
-    loggerService.debug(`auth.service - signup with username: ${username}, fullname: ${fullname}`)
+    loggerService.deboard(`auth.service - signup with username: ${username}, fullname: ${fullname}`)
     if (!username || !password || !fullname) throw 'Missing required signup information'
 
     const userExist = await userService.getByUsername(username)

@@ -8,6 +8,7 @@ router.get('/', getBoards)
 router.get('/:boardId', getboard)
 router.post('/', addBoard)
 router.put('/:boardId', updateBoard)
-router.delete('/:boardId', requireAuth, removeBoard)
+router.delete('/:boardId', removeBoard)
+// router.delete('/:boardId', requireAuth, removeBoard)
 
 export const boardRouter = router

@@ -20,10 +20,6 @@ async function query(filterBy) {
             boardsToDisplay = boardsToDisplay.filter(board => regExp.test(board.title))
         }
 
-        if (filterBy.severity) {
-            boardsToDisplay = boardsToDisplay.filter(board => board.severity === filterBy.severity)
-
-        }
 
         if (filterBy.pageIdx !== undefined && !isNaN(filterBy.pageIdx)) {
             const startIdx = filterBy.pageIdx * PAGE_SIZE
@@ -59,7 +55,6 @@ async function query(filterBy) {
 async function getById(boardId) {
 
     try {
-        console.log('boards:', boards)
         const board = boards.find(board => board._id === boardId)
         if (!board) throw new Error('Cannot find board')
         return board
@@ -68,15 +63,16 @@ async function getById(boardId) {
     }
 }
 
-async function remove(boardId, loggedinUser) {
+async function remove(boardId, loggedinUser=null) {
     try {
+        
         const boardIdx = boards.findIndex(board => board._id === boardId)
         if (boardIdx === -1) throw new Error('Cannot find board')
-        if (!loggedinUser?.isAdmin &&
-            boards[boardIdx].creator._id !== loggedinUser._id) {
-            console.log('Not your board:')
-            throw { status: 403, message: 'Not your board' }
-        }
+        // if (!loggedinUser?.isAdmin &&
+        //     boards[boardIdx].creator._id !== loggedinUser._id) {
+        //     console.log('Not your board:')
+        //     throw { status: 403, message: 'Not your board' }
+        // }
         boards.splice(boardIdx, 1)
         await saveBoardsToFile()
     } catch (err) {
