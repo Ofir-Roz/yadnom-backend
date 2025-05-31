@@ -41,9 +41,9 @@ export async function updateBoard(req, res) {
 }
 
 export async function addBoard(req, res) {
-    console.log(req.body.loggedinUser)
+    console.log(req.loggedinUser)
     const boardToSave = getDefaultBoard(req.body.title || 'New Board')
-    boardToSave.created_by = req.body.loggedinUser._id
+    boardToSave.created_by = req.loggedinUser._id
     try {
         const savedBoard = await boardService.save(boardToSave)
         res.send(savedBoard)
@@ -57,7 +57,7 @@ export async function removeBoard(req, res) {
     const { boardId } = req.params
 
     try {
-        const t = await boardService.remove(boardId, req.body.loggedinUser)
+        const t = await boardService.remove(boardId, req.loggedinUser)
         res.send('OK')
     } catch (err) {
         loggerService.error(`Couldn't remove board: ${boardId}`, err)
@@ -68,7 +68,7 @@ export async function removeBoard(req, res) {
 export async function removeComment(req, res) {
     const { boardId, taskId, commentId } = req.params
     try {
-        await boardService.removeComment(boardId, taskId, commentId, req.body.loggedinUser)
+        await boardService.removeComment(boardId, taskId, commentId, req.loggedinUser)
         res.send('OK')
     }
     catch (err) {
