@@ -41,8 +41,9 @@ export async function updateBoard(req, res) {
 }
 
 export async function addBoard(req, res) {
+    console.log(req.body.loggedinUser)
     const boardToSave = getDefaultBoard(req.body.title || 'New Board')
-
+    boardToSave.created_by = req.body.loggedinUser._id
     try {
         const savedBoard = await boardService.save(boardToSave)
         res.send(savedBoard)
