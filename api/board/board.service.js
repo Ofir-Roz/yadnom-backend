@@ -63,16 +63,16 @@ async function getById(boardId) {
     }
 }
 
-async function remove(boardId, loggedinUser=null) {
+async function remove(boardId, loggedinUser) {
     try {
-        
+        console.log("loggedinUser:", loggedinUser)
         const boardIdx = boards.findIndex(board => board._id === boardId)
+        console.log(boards[boardIdx].created_by)
         if (boardIdx === -1) throw new Error('Cannot find board')
-        // if (!loggedinUser?.isAdmin &&
-        //     boards[boardIdx].creator._id !== loggedinUser._id) {
-        //     console.log('Not your board:')
-        //     throw { status: 403, message: 'Not your board' }
-        // }
+        if (boards[boardIdx].created_by !== loggedinUser._id) {
+            console.log('Not your board:')
+            throw { status: 403, message: 'Not your board' }
+        }
         boards.splice(boardIdx, 1)
         await saveBoardsToFile()
     } catch (err) {
@@ -107,17 +107,17 @@ export function getDefaultBoard(title) {
         color: "#00c875", // Green color
         tasks: []
     }
-    
+
     const group2 = {
         _id: makeId(),
         title: "Group Title",
         color: "#579bfc", // Blue color
         tasks: []
     }
-    
+
     // Create 5 tasks (3 for first group, 2 for second)
     const tasks = []
-    
+
     // First group tasks
     for (let i = 1; i <= 3; i++) {
         const task = {
@@ -128,8 +128,8 @@ export function getDefaultBoard(title) {
             column_values: {},
             groupid: group1._id
         }
-          // Initialize column values with specific status for each task
-          // Status column - specific values for first two tasks, null for the rest
+        // Initialize column values with specific status for each task
+        // Status column - specific values for first two tasks, null for the rest
         if (i === 1) {
             task.column_values['status_column'] = 'working'; // "Working on it"
         } else if (i === 2) {
@@ -137,16 +137,16 @@ export function getDefaultBoard(title) {
         } else {
             task.column_values['status_column'] = 'Default'; // Default/no label
         }
-        
+
         // Person column
         task.column_values['owners_column'] = []; // Empty array for owners column
-        
+
         // Date column - empty as requested
         task.column_values['due_date_column'] = null;
-        
+
         tasks.push(task)
     }
-    
+
     // Second group tasks
     for (let i = 4; i <= 5; i++) {
         const task = {
@@ -157,21 +157,21 @@ export function getDefaultBoard(title) {
             column_values: {},
             groupid: group2._id
         }
-          // Initialize column values
-          // Status column - set to null for all tasks in the second group (no label)
+        // Initialize column values
+        // Status column - set to null for all tasks in the second group (no label)
         task.column_values['status_column'] = "Default"; // Default/no label
-        
+
         // Person column
         task.column_values['owners_column'] = []; // Empty array for owners column
-        
+
         // Date column - empty as requested
         task.column_values['due_date_column'] = null;
-        
+
         tasks.push(task)
     }
-    
+
     return {
-        name: title, 
+        name: title,
         members: [201, 202, 203], // Include all available members
         created_at: Date.now(),
         updated_at: Date.now(),
@@ -183,7 +183,7 @@ export function getDefaultBoard(title) {
 }
 
 function getDefaultColumns() {
-   const defaultColumns =  [
+    const defaultColumns = [
         {
             "_id": "status_column",
             "title": "Status",
@@ -243,7 +243,7 @@ function getDefaultColumns() {
             }
         }
     ]
-   
+
     return defaultColumns
 }
 

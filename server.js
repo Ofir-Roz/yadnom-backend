@@ -29,11 +29,11 @@ app.use(express.json())
 
 import { boardRouter } from './api/board/board.routes.js'
 import { userRouter } from './api/user/user.routes.js'
-// import { authRouter } from './api/auth/auth.routes.js'
+import { authRouter } from './api/auth/auth.routes.js'
 
 app.use('/api/board', boardRouter)
 app.use('/api/user', userRouter)
-// app.use('/api/auth', authRouter)
+app.use('/api/auth', authRouter)
 
 app.get('/**', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))

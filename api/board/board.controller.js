@@ -54,8 +54,9 @@ export async function addBoard(req, res) {
 
 export async function removeBoard(req, res) {
     const { boardId } = req.params
+    
     try {
-        const t = await boardService.remove(boardId, req.loggedinUser)
+        const t = await boardService.remove(boardId, req.body.loggedinUser)
         console.log('t:', t)
         res.send('OK')
     } catch (err) {
