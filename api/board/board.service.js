@@ -4,7 +4,9 @@ export const boardService = {
     query,
     getById,
     remove,
-    save
+    save,
+    removeComment,
+
 }
 
 const boards = readJsonFile('./data/boards.json')
@@ -97,6 +99,29 @@ async function save(boardToSave) {
         throw err
     }
 }
+
+async function removeComment(boardId, taskId, commentId, loggedinUser) {
+
+    try {
+        const board = await getById(boardId)
+        const task = board.tasks.find(task => task._id == taskId)
+        if (!task) throw new Error('Cannot find task')
+        const commentIdx = task.comments.findIndex(comment => comment._id == commentId)
+        if (commentIdx === -1) throw new Error('Cannot find comment')
+
+        if (task.comments[commentIdx].created_by != loggedinUser._id &&
+            board.created_by !== board.created_by != loggedinUser._id) {
+            throw { status: 403, message: 'Not your comment' }
+        }
+
+        task.comments.splice(commentIdx, 1)
+        await saveBoardsToFile()
+
+    } catch (err) {
+        throw err
+    }
+}
+
 
 export function getDefaultBoard(title) {
     const columns = getDefaultColumns()
@@ -250,3 +275,4 @@ function getDefaultColumns() {
 function saveBoardsToFile() {
     return writeJsonFile('./data/boards.json', boards)
 }
+

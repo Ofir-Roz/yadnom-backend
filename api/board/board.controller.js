@@ -55,13 +55,28 @@ export async function addBoard(req, res) {
 
 export async function removeBoard(req, res) {
     const { boardId } = req.params
-    
+
     try {
         const t = await boardService.remove(boardId, req.body.loggedinUser)
-        console.log('t:', t)
         res.send('OK')
     } catch (err) {
         loggerService.error(`Couldn't remove board: ${boardId}`, err)
         res.status(400).send(`Couldn't remove board`)
     }
+}
+
+export async function removeComment(req, res) {
+    const { boardId, taskId, commentId } = req.params
+    try {
+        await boardService.removeComment(boardId, taskId, commentId, req.body.loggedinUser)
+        res.send('OK')
+    }
+    catch (err) {
+        loggerService.error(`Couldn't remove comment: ${commentId}`, err)
+        res.status(400).send(`Couldn't remove comment`)
+    }
+}
+
+export async function updateComment(req, res) {
+
 }
