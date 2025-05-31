@@ -1,26 +1,26 @@
 [
     {
-        "_id": 201,
+        "_id": "201",
         "fullName": "CEO Cat",
         "imageUrl": "/src/assets/Profile_pics_temporary/cat.jpg"
     },
     {
-        "_id": 202,
+        "_id": "202",
         "fullName": "Caffeine Cow",
         "imageUrl": "/src/assets/Profile_pics_temporary/cow.jpg"
     },
     {
-        "_id": 203,
+        "_id": "203",
         "fullName": "Duck Developer",
         "imageUrl": "/src/assets/Profile_pics_temporary/duck.jpg"
     },
     {
-        "_id": 204,
+        "_id": "204",
         "fullName": "Mouse Manager",
         "imageUrl": "/src/assets/Profile_pics_temporary/mouse.jpg"
     },
     {
-        "_id": 205,
+        "_id": "205",
         "fullName": "Tired Turtle",
         "imageUrl": "/src/assets/Profile_pics_temporary/turtle.jpg"
     }

@@ -330,49 +330,6 @@
         ],
         "tasks": [
             {
-                "_id": 6001,
-                "title": "User research & interviews",
-                "created_at": "2025-01-12T09:00:00Z",
-                "updated_at": "2025-01-22T15:30:00Z",
-                "creator_id": 204,
-                "column_values": {
-                    "status_column": "done",
-                    "sprint_column": "sprint1",
-                    "priority_column": "high",
-                    "owners_column": [
-                        204
-                    ],
-                    "due_date_column": "2025-01-22",
-                    "files_column": [
-                        "user_research_findings.pdf"
-                    ],
-                    "progress_column": 100
-                },
-                "groupid": "grp_ui_design",
-                "comments": [
-                    {
-                        "_id": "c1001",
-                        "authorId": 201,
-                        "createdAt": "2025-01-13T10:00:00Z",
-                        "text": "Great insights from the user research! Let's ensure we address these in our design.",
-                        "replies": [
-                            {
-                                "_id": "c1003",
-                                "authorId": 201,
-                                "createdAt": "2025-01-13T11:00:00Z",
-                                "text": "Absolutely! The feedback will be crucial for our next steps."
-                            }
-                        ]
-                    },
-                    {
-                        "_id": "c1002",
-                        "authorId": 201,
-                        "createdAt": "2025-01-14T09:30:00Z",
-                        "text": "I've started drafting the design concepts based on the research findings."
-                    }
-                ]
-            },
-            {
                 "_id": 6002,
                 "title": "Create design system",
                 "created_at": "2025-01-15T10:15:00Z",
@@ -455,6 +412,49 @@
                     "progress_column": 100
                 },
                 "groupid": "grp_ui_design"
+            },
+            {
+                "_id": 6001,
+                "title": "User research & interviews",
+                "created_at": "2025-01-12T09:00:00Z",
+                "updated_at": "2025-01-22T15:30:00Z",
+                "creator_id": 204,
+                "column_values": {
+                    "status_column": "done",
+                    "sprint_column": "sprint1",
+                    "priority_column": "high",
+                    "owners_column": [
+                        204
+                    ],
+                    "due_date_column": "2025-01-22",
+                    "files_column": [
+                        "user_research_findings.pdf"
+                    ],
+                    "progress_column": 100
+                },
+                "groupid": "grp_ui_design",
+                "comments": [
+                    {
+                        "_id": "c1001",
+                        "authorId": 201,
+                        "createdAt": "2025-01-13T10:00:00Z",
+                        "text": "Great insights from the user research! Let's ensure we address these in our design.",
+                        "replies": [
+                            {
+                                "_id": "c1003",
+                                "authorId": 201,
+                                "createdAt": "2025-01-13T11:00:00Z",
+                                "text": "Absolutely! The feedback will be crucial for our next steps."
+                            }
+                        ]
+                    },
+                    {
+                        "_id": "c1002",
+                        "authorId": 201,
+                        "createdAt": "2025-01-14T09:30:00Z",
+                        "text": "I've started drafting the design concepts based on the research findings."
+                    }
+                ]
             },
             {
                 "_id": 6005,
