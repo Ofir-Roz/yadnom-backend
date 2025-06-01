@@ -46,7 +46,13 @@ app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
 
 
-app.get('/**', (req, res) => {
+// Catch-all: only for routes that do NOT contain a dot (.)
+app.get('*', (req, res) => {
+    if (req.path.includes('.')) {
+        // Let express.static handle it, or return 404
+        res.status(404).end()
+        return
+    }
     res.sendFile(path.resolve('public/index.html'))
 })
 
