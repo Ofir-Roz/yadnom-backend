@@ -5,12 +5,16 @@ import cookieParser from 'cookie-parser'
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import http from 'http'
+import { Server } from 'socket.io'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 
 const app = express()
+const server = http.createServer(app)
+const io = new Server(server)
 
 const corsOptions = {
     origin: [
@@ -39,7 +43,16 @@ app.get('/**', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))
 })
 
+io.on('connection', (socket) => {
+    loggerService.info(`New socket connection: ${socket.id}`)
+
+    socket.on('disconnect', () => {
+        loggerService.info(`Socket disconnected: ${socket.id}`)
+    })
+
+})
+
 const port = 3030
-app.listen(port, () => {
+server.listen(port, () => {
     loggerService.info(`Example app listening on port http://127.0.0.1:${port}/`)
 })

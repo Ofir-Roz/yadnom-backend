@@ -47,3 +47,17 @@ export async function logout(req, res) {
         res.status(400).send({ err: 'Failed to logout' })
     }
 }
+
+export async function verifyToken(req, res) {
+    const { loginToken } = req.cookies
+    try {
+        const user = await authService.validateToken(loginToken)
+        if (!user) {
+            return res.status(401).send({ err: 'Unauthorized' })
+        }
+        res.json(user)
+    } catch (err) {
+        loggerService.error('Failed to verify token ' + err)
+        res.status(401).send({ err: 'Unauthorized' })
+    }
+}
