@@ -27,6 +27,12 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
+
+//* Redirect to login page on first visit (must be before static files)
+app.get('/', (req, res) => {
+   res.redirect('/login');
+})
+
 app.use(express.static('public'))
 app.use(cookieParser())
 app.use(express.json())
@@ -38,6 +44,7 @@ import { authRouter } from './api/auth/auth.routes.js'
 app.use('/api/board', boardRouter)
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
+
 
 app.get('/**', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))

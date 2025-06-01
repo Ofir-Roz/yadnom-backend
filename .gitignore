@@ -2,5 +2,7 @@ node_modules
 logs
 .DS_Store
 **/.vscode/settings.json
-data/
 package-lock.json
+
+# Temporary for Render
+# data/
