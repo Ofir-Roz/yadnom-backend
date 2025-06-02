@@ -1,6 +1,6 @@
-
 import { boardService, getDefaultBoard } from "./board.service.js"
 import { loggerService } from "../../services/logger.service.js"
+import { emitBoardUpdate } from '../../services/socket.service.js'
 
 export async function getBoards(req, res) {
     const filterBy = {
@@ -32,6 +32,8 @@ export async function updateBoard(req, res) {
 
     try {
         const savedBoard = await boardService.save(boardToSave)
+        // Emit board update to all clients in the board room
+        emitBoardUpdate(savedBoard._id, savedBoard)
         res.send(savedBoard)
     } catch (err) {
         loggerService.error(`Couldn't save board`, err)
