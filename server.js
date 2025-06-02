@@ -46,9 +46,9 @@ app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
 
 // Serve static files for the React app under /board
-app.use('/board', express.static(path.join(__dirname, 'dist')));
+app.use('/board', express.static(path.join(__dirname, 'public')));
 app.get('/board/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/**', (req, res) => {
