@@ -4,14 +4,14 @@
         "name": "Demo Yadnom Project Management Tool Development",
         "description": "End-to-end development of our new project management platform with kanban and dashboard capabilities (demo data)",
         "members": [
-            201,
-            202,
-            203,
-            204,
-            205,
-            206
+            "684024b2159fcd010189b645",
+            "684024b2159fcd010189b646",
+            "684024b2159fcd010189b647",
+            "684024b2159fcd010189b648",
+            "684024b2159fcd010189b649",
+            "684024b2159fcd010189b64a"
         ],
-        "created_by": 202,
+        "created_by": "684024b2159fcd010189b646",
         "created_at": "2025-01-10T08:00:00Z",
         "updated_at": "2025-03-24T17:30:00Z",
         "columns": [
@@ -185,13 +185,13 @@
                 "title": "Create design system",
                 "created_at": "2025-01-15T10:15:00Z",
                 "updated_at": "2025-02-05T11:45:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        204,
-                        202
+                        "684024b2159fcd010189b648",
+                        "684024b2159fcd010189b646"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-05",
@@ -204,13 +204,13 @@
                 "comments": [
                     {
                         "_id": "c2001",
-                        "created_by": 204,
+                        "created_by": "684024b2159fcd010189b648",
                         "createdAt": "2025-05-29T14:20:00Z",
                         "text": "The design system looks comprehensive. Great work on establishing consistent patterns!"
                     },
                     {
                         "_id": "c2002",
-                        "created_by": 202,
+                        "created_by": "684024b2159fcd010189b646",
                         "createdAt": "2025-03-15T09:45:00Z",
                         "text": "Initial feedback: Let's make sure we include accessibility guidelines in the design system from the start."
                     }
@@ -221,12 +221,12 @@
                 "title": "Create board view wireframes",
                 "created_at": "2025-01-25T13:10:00Z",
                 "updated_at": "2025-02-10T16:20:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b648"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-10",
@@ -242,12 +242,12 @@
                 "title": "Design dashboard UI",
                 "created_at": "2025-02-08T09:00:00Z",
                 "updated_at": "2025-02-20T14:30:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b648"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-02-20",
@@ -264,13 +264,13 @@
                 "title": "User research & interviews",
                 "created_at": "2025-01-12T09:00:00Z",
                 "updated_at": "2025-01-22T15:30:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "priority_column": "high",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b648"
                     ],
                     "due_date_column": "2025-01-22",
                     "files_column": [
@@ -282,13 +282,13 @@
                 "comments": [
                     {
                         "_id": "c1001",
-                        "created_by": 201,
+                        "created_by": "684024b2159fcd010189b645",
                         "createdAt": "2025-01-13T10:00:00Z",
                         "text": "Great insights from the user research! Let's ensure we address these in our design.",
                         "replies": [
                             {
                                 "_id": "c1003",
-                                "created_by": 201,
+                                "created_by": "684024b2159fcd010189b645",
                                 "createdAt": "2025-01-13T11:00:00Z",
                                 "text": "Absolutely! The feedback will be crucial for our next steps."
                             }
@@ -301,12 +301,12 @@
                 "title": "Create interactive prototypes",
                 "created_at": "2025-02-15T11:00:00Z",
                 "updated_at": "2025-03-01T13:15:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b648"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-03-01",
@@ -322,12 +322,12 @@
                 "title": "Design notification system UI",
                 "created_at": "2025-03-05T10:00:00Z",
                 "updated_at": "2025-03-18T16:20:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint4",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b648"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-03-25",
@@ -343,12 +343,12 @@
                 "title": "Set up React project structure",
                 "created_at": "2025-01-20T09:30:00Z",
                 "updated_at": "2025-01-25T14:15:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b647"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-01-25",
@@ -362,12 +362,12 @@
                 "title": "Implement component library",
                 "created_at": "2025-01-26T08:45:00Z",
                 "updated_at": "2025-02-15T11:10:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b647"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-15",
@@ -381,12 +381,12 @@
                 "title": "Build board view components",
                 "created_at": "2025-02-10T13:20:00Z",
                 "updated_at": "2025-02-28T15:45:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b647"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-28",
@@ -400,12 +400,12 @@
                 "title": "Implement drag and drop functionality",
                 "created_at": "2025-02-20T09:15:00Z",
                 "updated_at": "2025-03-10T11:30:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "testing",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b647"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-03-10",
@@ -419,12 +419,12 @@
                 "title": "Create dashboard widgets",
                 "created_at": "2025-03-01T11:15:00Z",
                 "updated_at": "2025-03-15T14:30:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b647"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-03-20",
@@ -438,12 +438,12 @@
                 "title": "Implement responsive layouts",
                 "created_at": "2025-03-10T09:30:00Z",
                 "updated_at": "2025-03-22T13:20:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "stuck",
                     "sprint_column": "sprint4",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b647"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-03-25",
@@ -457,12 +457,12 @@
                 "title": "Design database schema",
                 "created_at": "2025-01-15T09:00:00Z",
                 "updated_at": "2025-01-28T14:30:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "priority_column": "critical",
                     "due_date_column": "2025-01-28",
@@ -478,12 +478,12 @@
                 "title": "Set up API structure",
                 "created_at": "2025-01-25T10:00:00Z",
                 "updated_at": "2025-02-05T13:20:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-05",
@@ -499,13 +499,13 @@
                 "title": "Implement authentication system",
                 "created_at": "2025-02-01T09:30:00Z",
                 "updated_at": "2025-02-15T15:40:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        202,
-                        205
+                        "684024b2159fcd010189b646",
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "critical",
                     "due_date_column": "2025-02-15",
@@ -519,12 +519,12 @@
                 "title": "Build board CRUD endpoints",
                 "created_at": "2025-02-10T11:15:00Z",
                 "updated_at": "2025-02-25T15:45:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-25",
@@ -538,13 +538,13 @@
                 "title": "Implement real-time updates",
                 "created_at": "2025-02-20T10:00:00Z",
                 "updated_at": "2025-03-10T14:15:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        202,
-                        205
+                        "684024b2159fcd010189b646",
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-03-15",
@@ -558,12 +558,12 @@
                 "title": "Create activity logging system",
                 "created_at": "2025-03-01T09:15:00Z",
                 "updated_at": "2025-03-12T11:30:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        205
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-03-20",
@@ -577,12 +577,12 @@
                 "title": "Implement notification service",
                 "created_at": "2025-03-05T11:30:00Z",
                 "updated_at": "2025-03-20T15:40:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "planning",
                     "sprint_column": "sprint4",
                     "owners_column": [
-                        205
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-04-05",
@@ -596,12 +596,12 @@
                 "title": "Create test plan",
                 "created_at": "2025-01-20T09:00:00Z",
                 "updated_at": "2025-02-01T14:30:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        205
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-01",
@@ -617,13 +617,13 @@
                 "title": "Write unit tests for component library",
                 "created_at": "2025-02-15T10:00:00Z",
                 "updated_at": "2025-02-25T13:15:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        205,
-                        203
+                        "684024b2159fcd010189b649",
+                        "684024b2159fcd010189b647"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-02-25",
@@ -637,12 +637,12 @@
                 "title": "Test authentication workflows",
                 "created_at": "2025-02-16T09:30:00Z",
                 "updated_at": "2025-02-23T13:15:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        205
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-23",
@@ -658,12 +658,12 @@
                 "title": "Integration testing for board view",
                 "created_at": "2025-03-01T11:15:00Z",
                 "updated_at": "2025-03-12T16:30:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "testing",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        205
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-03-15",
@@ -677,12 +677,12 @@
                 "title": "Performance testing",
                 "created_at": "2025-03-05T10:30:00Z",
                 "updated_at": "2025-03-18T15:15:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "planning",
                     "sprint_column": "sprint4",
                     "owners_column": [
-                        205
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-04-01",
@@ -696,12 +696,12 @@
                 "title": "Set up CI/CD pipeline",
                 "created_at": "2025-01-18T09:15:00Z",
                 "updated_at": "2025-01-30T13:30:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b648"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-01-30",
@@ -717,12 +717,12 @@
                 "title": "Configure staging environment",
                 "created_at": "2025-02-01T10:00:00Z",
                 "updated_at": "2025-02-12T15:30:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b648"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-02-12",
@@ -736,12 +736,12 @@
                 "title": "Set up monitoring and alerts",
                 "created_at": "2025-02-15T11:30:00Z",
                 "updated_at": "2025-03-01T14:15:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b648"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-03-01",
@@ -757,7 +757,7 @@
                 "title": "Database scaling strategy",
                 "created_at": "2025-03-02T09:30:00Z",
                 "updated_at": "2025-03-20T13:45:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint3",
@@ -773,7 +773,7 @@
             }
         ],
         "loggedinUser": {
-            "_id": "201",
+            "_id": "684024b2159fcd010189b645",
             "fullname": "CEO Cat",
             "imgUrl": "/src/assets/Profile_pics_temporary/cat.jpg"
         }
@@ -783,11 +783,11 @@
         "name": "Marketing Campaign Q3 2025",
         "description": "Q3 2025 Marketing initiatives and campaigns for product launch",
         "members": [
-            202,
-            203,
-            202
+            "684024b2159fcd010189b646",
+            "684024b2159fcd010189b647",
+            "684024b2159fcd010189b646"
         ],
-        "created_by": 202,
+        "created_by": "684024b2159fcd010189b646",
         "created_at": "2025-05-01T09:00:00Z",
         "updated_at": "2025-05-13T10:30:00Z",
         "columns": [
@@ -897,12 +897,12 @@
                 "title": "Q3 Social Media Calendar",
                 "created_at": "2025-05-01T10:00:00Z",
                 "updated_at": "2025-05-13T11:30:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "in_progress",
                     "channel_column": "social",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "budget_column": 1500,
                     "due_date_column": "2025-05-20"
@@ -914,12 +914,12 @@
                 "title": "Instagram Stories Campaign",
                 "created_at": "2025-05-02T09:00:00Z",
                 "updated_at": "2025-05-13T14:15:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "not_started",
                     "channel_column": "social",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b647"
                     ],
                     "budget_column": 2000,
                     "due_date_column": "2025-06-01"
@@ -931,12 +931,12 @@
                 "title": "Newsletter Template Design",
                 "created_at": "2025-05-03T11:00:00Z",
                 "updated_at": "2025-05-13T09:45:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "completed",
                     "channel_column": "email",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "budget_column": 800,
                     "due_date_column": "2025-05-10"
@@ -950,12 +950,12 @@
         "name": "New Product Launch - Smart Home Hub",
         "description": "Planning and execution of the Smart Home Hub product launch",
         "members": [
-            201,
-            202,
-            203,
-            204
+            "684024b2159fcd010189b645",
+            "684024b2159fcd010189b646",
+            "684024b2159fcd010189b647",
+            "684024b2159fcd010189b648"
         ],
-        "created_by": 201,
+        "created_by": "684024b2159fcd010189b645",
         "created_at": "2025-05-10T08:00:00Z",
         "updated_at": "2025-05-13T15:45:00Z",
         "columns": [
@@ -1083,12 +1083,12 @@
                 "title": "Finalize Hardware Specifications",
                 "created_at": "2025-05-10T09:00:00Z",
                 "updated_at": "2025-05-13T14:30:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "planning",
                     "priority_column": "urgent",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-05-25",
                     "status_column": 30
@@ -1100,12 +1100,12 @@
                 "title": "Prototype Testing",
                 "created_at": "2025-05-11T10:15:00Z",
                 "updated_at": "2025-05-13T11:20:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "development",
                     "priority_column": "high",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-06-15",
                     "status_column": 0
@@ -1117,12 +1117,12 @@
                 "title": "Mobile App Development",
                 "created_at": "2025-05-12T08:30:00Z",
                 "updated_at": "2025-05-13T16:45:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "planning",
                     "priority_column": "high",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-07-01",
                     "status_column": 15
@@ -1134,12 +1134,12 @@
                 "title": "Voice Control Integration",
                 "created_at": "2025-05-12T09:30:00Z",
                 "updated_at": "2025-05-13T14:45:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "planning",
                     "priority_column": "medium",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-07-15",
                     "status_column": 0
@@ -1151,12 +1151,12 @@
                 "title": "Cloud Backend Setup",
                 "created_at": "2025-05-12T10:15:00Z",
                 "updated_at": "2025-05-13T15:30:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "development",
                     "priority_column": "high",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-06-30",
                     "status_column": 25
@@ -1168,12 +1168,12 @@
                 "title": "Industrial Design Mockups",
                 "created_at": "2025-05-10T11:00:00Z",
                 "updated_at": "2025-05-13T13:15:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "development",
                     "priority_column": "high",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-05-30",
                     "status_column": 60
@@ -1185,12 +1185,12 @@
                 "title": "UI/UX Design System",
                 "created_at": "2025-05-11T09:45:00Z",
                 "updated_at": "2025-05-13T16:20:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "development",
                     "priority_column": "medium",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-06-10",
                     "status_column": 40
@@ -1202,12 +1202,12 @@
                 "title": "Press Release Draft",
                 "created_at": "2025-05-12T13:00:00Z",
                 "updated_at": "2025-05-13T11:45:00Z",
-                "creator_id": 201,
+                "creator_id": "684024b2159fcd010189b645",
                 "column_values": {
                     "phase_column": "planning",
                     "priority_column": "medium",
                     "owners_column": [
-                        201
+                        "684024b2159fcd010189b645"
                     ],
                     "timeline_column": "2025-06-20",
                     "status_column": 10
@@ -1219,12 +1219,12 @@
                 "title": "Product Launch Event Planning",
                 "created_at": "2025-05-12T14:30:00Z",
                 "updated_at": "2025-05-13T15:20:00Z",
-                "creator_id": 201,
+                "creator_id": "684024b2159fcd010189b645",
                 "column_values": {
                     "phase_column": "planning",
                     "priority_column": "high",
                     "owners_column": [
-                        201
+                        "684024b2159fcd010189b645"
                     ],
                     "timeline_column": "2025-07-15",
                     "status_column": 5
@@ -1236,12 +1236,12 @@
                 "title": "Marketing Materials Design",
                 "created_at": "2025-05-12T15:00:00Z",
                 "updated_at": "2025-05-13T12:30:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "planning",
                     "priority_column": "medium",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-06-25",
                     "status_column": 0
@@ -1253,12 +1253,12 @@
                 "title": "Technical Documentation",
                 "created_at": "2025-05-11T11:00:00Z",
                 "updated_at": "2025-05-13T14:15:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "development",
                     "priority_column": "medium",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-06-30",
                     "status_column": 20
@@ -1270,12 +1270,12 @@
                 "title": "User Manual Creation",
                 "created_at": "2025-05-11T13:30:00Z",
                 "updated_at": "2025-05-13T16:00:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "phase_column": "planning",
                     "priority_column": "low",
                     "owners_column": [
-                        203
+                        "684024b2159fcd010189b647"
                     ],
                     "timeline_column": "2025-07-10",
                     "status_column": 0
@@ -1287,12 +1287,12 @@
                 "title": "API Documentation",
                 "created_at": "2025-05-12T09:00:00Z",
                 "updated_at": "2025-05-13T11:30:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "phase_column": "development",
                     "priority_column": "medium",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "timeline_column": "2025-06-25",
                     "status_column": 15
@@ -1306,14 +1306,14 @@
         "name": "Yadnom Team Collaboration Demo",
         "description": "End-to-end development of our new project management platform with dashboard capabilities (demo data)",
         "members": [
-            201,
-            202,
-            203,
-            204,
-            205,
-            206
+            "684024b2159fcd010189b645",
+            "684024b2159fcd010189b646",
+            "684024b2159fcd010189b647",
+            "684024b2159fcd010189b648",
+            "684024b2159fcd010189b649",
+            "684024b2159fcd010189b64a"
         ],
-        "created_by": 202,
+        "created_by": "684024b2159fcd010189b646",
         "created_at": "2025-01-10T08:00:00Z",
         "updated_at": "2025-03-24T17:30:00Z",
         "columns": [
@@ -1470,13 +1470,13 @@
                 "title": "Create design system",
                 "created_at": "2025-01-15T10:15:00Z",
                 "updated_at": "2025-05-05T11:45:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        201,
-                        204
+                        "684024b2159fcd010189b648",
+                        "684024b2159fcd010189b646"
                     ],
                     "priority_column": "critical",
                     "due_date_column": "2025-05-05",
@@ -1489,13 +1489,13 @@
                 "comments": [
                     {
                         "_id": "c2001",
-                        "created_by": 204,
+                        "created_by": "684024b2159fcd010189b648",
                         "createdAt": "2025-05-29T14:20:00Z",
                         "text": "The design system looks comprehensive. Great work on establishing consistent patterns!"
                     },
                     {
                         "_id": "c2002",
-                        "created_by": 202,
+                        "created_by": "684024b2159fcd010189b646",
                         "createdAt": "2025-03-15T09:45:00Z",
                         "text": "Initial feedback: Let's make sure we include accessibility guidelines in the design system from the start."
                     }
@@ -1506,13 +1506,13 @@
                 "title": "Create board view wireframes",
                 "created_at": "2025-01-25T13:10:00Z",
                 "updated_at": "2025-07-02T16:20:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        202,
-                        204
+                        "684024b2159fcd010189b646",
+                        "684024b2159fcd010189b648"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-07-02",
@@ -1528,12 +1528,12 @@
                 "title": "Design dashboard UI",
                 "created_at": "2025-02-08T09:00:00Z",
                 "updated_at": "2025-05-10T14:30:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "stuck",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        205
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "low",
                     "due_date_column": "2025-05-10",
@@ -1550,14 +1550,14 @@
                 "title": "User research & interviews",
                 "created_at": "2025-01-12T09:00:00Z",
                 "updated_at": "2025-07-05T15:30:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "planning",
                     "sprint_column": "sprint1",
                     "priority_column": "medium",
                     "owners_column": [
-                        201,
-                        206
+                        "684024b2159fcd010189b645",
+                        "684024b2159fcd010189b64a"
                     ],
                     "due_date_column": "2025-07-05",
                     "files_column": [
@@ -1569,13 +1569,13 @@
                 "comments": [
                     {
                         "_id": "c1001",
-                        "created_by": 201,
+                        "created_by": "684024b2159fcd010189b645",
                         "createdAt": "2025-01-13T10:00:00Z",
                         "text": "Great insights from the user research! Let's ensure we address these in our design.",
                         "replies": [
                             {
                                 "_id": "c1003",
-                                "created_by": 201,
+                                "created_by": "684024b2159fcd010189b645",
                                 "createdAt": "2025-01-13T11:00:00Z",
                                 "text": "Absolutely! The feedback will be crucial for our next steps."
                             }
@@ -1588,13 +1588,13 @@
                 "title": "Create interactive prototypes",
                 "created_at": "2025-02-15T11:00:00Z",
                 "updated_at": "2025-03-01T13:15:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "testing",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        204,
-                        205
+                        "684024b2159fcd010189b648",
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "high",
                     "files_column": [
@@ -1609,12 +1609,12 @@
                 "title": "Design notification system UI",
                 "created_at": "2025-03-05T10:00:00Z",
                 "updated_at": "2025-03-18T16:20:00Z",
-                "creator_id": 204,
+                "creator_id": "684024b2159fcd010189b648",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint4",
                     "owners_column": [
-                        206
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "medium",
                     "due_date_column": null,
@@ -1630,13 +1630,13 @@
                 "title": "Set up React project structure",
                 "created_at": "2025-01-20T09:30:00Z",
                 "updated_at": "2025-05-03T14:15:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        203,
-                        201
+                        "684024b2159fcd010189b647",
+                        "684024b2159fcd010189b645"
                     ],
                     "priority_column": "low",
                     "due_date_column": "2025-05-03",
@@ -1650,12 +1650,12 @@
                 "title": "Upload mock data",
                 "created_at": "2025-02-10T13:20:00Z",
                 "updated_at": "2025-03-28T15:45:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        201
+                        "684024b2159fcd010189b645"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-06-06",
@@ -1669,12 +1669,12 @@
                 "title": "Implement component library",
                 "created_at": "2025-01-26T08:45:00Z",
                 "updated_at": "2025-07-01T11:10:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        202
+                        "684024b2159fcd010189b646"
                     ],
                     "priority_column": "critical",
                     "due_date_column": "2025-05-31",
@@ -1688,13 +1688,13 @@
                 "title": "User auth and authorization",
                 "created_at": "2025-02-20T09:15:00Z",
                 "updated_at": "2025-07-04T11:30:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "stuck",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        203,
-                        205
+                        "684024b2159fcd010189b647",
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-07-04",
@@ -1708,12 +1708,12 @@
                 "title": "Create dashboard widgets",
                 "created_at": "2025-03-01T11:15:00Z",
                 "updated_at": "2025-05-08T14:30:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "testing",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        206
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "low",
                     "due_date_column": "2025-05-08",
@@ -1727,13 +1727,13 @@
                 "title": "Implement responsive layouts",
                 "created_at": "2025-03-10T09:30:00Z",
                 "updated_at": "2025-07-06T13:20:00Z",
-                "creator_id": 203,
+                "creator_id": "684024b2159fcd010189b647",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint4",
                     "owners_column": [
-                        202,
-                        203
+                        "684024b2159fcd010189b646",
+                        "684024b2159fcd010189b647"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-07-06",
@@ -1747,13 +1747,13 @@
                 "title": "Design database schema",
                 "created_at": "2025-01-15T09:00:00Z",
                 "updated_at": "2025-05-02T14:30:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        202,
-                        205
+                        "684024b2159fcd010189b646",
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-05-02",
@@ -1769,12 +1769,12 @@
                 "title": "Set up API structure",
                 "created_at": "2025-01-25T10:00:00Z",
                 "updated_at": "2025-07-03T13:20:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "planning",
                     "sprint_column": "sprint1",
                     "owners_column": [
-                        201
+                        "684024b2159fcd010189b645"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-07-03",
@@ -1790,14 +1790,14 @@
                 "title": "Implement authentication system",
                 "created_at": "2025-02-01T09:30:00Z",
                 "updated_at": "2025-03-15T15:40:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "stuck",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        202,
-                        205,
-                        206
+                        "684024b2159fcd010189b646",
+                        "684024b2159fcd010189b649",
+                        "684024b2159fcd010189b64a"
                     ],
                     "priority_column": "critical",
                     "due_date_column": null,
@@ -1811,12 +1811,12 @@
                 "title": "Build board CRUD endpoints",
                 "created_at": "2025-02-10T11:15:00Z",
                 "updated_at": "2025-05-07T15:45:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "testing",
                     "sprint_column": "sprint2",
                     "owners_column": [
-                        204
+                        "684024b2159fcd010189b646"
                     ],
                     "priority_column": "low",
                     "due_date_column": "2025-05-07",
@@ -1830,13 +1830,13 @@
                 "title": "Implement real-time updates",
                 "created_at": "2025-02-20T10:00:00Z",
                 "updated_at": "2025-07-07T14:15:00Z",
-                "creator_id": 202,
+                "creator_id": "684024b2159fcd010189b646",
                 "column_values": {
                     "status_column": "done",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        202,
-                        205
+                        "684024b2159fcd010189b646",
+                        "684024b2159fcd010189b649"
                     ],
                     "priority_column": "medium",
                     "due_date_column": "2025-07-07",
@@ -1850,13 +1850,13 @@
                 "title": "Create activity logging system",
                 "created_at": "2025-03-01T09:15:00Z",
                 "updated_at": "2025-05-09T11:30:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "working",
                     "sprint_column": "sprint3",
                     "owners_column": [
-                        205,
-                        201
+                        "684024b2159fcd010189b649",
+                        "684024b2159fcd010189b645"
                     ],
                     "priority_column": "high",
                     "due_date_column": "2025-05-09",
@@ -1870,13 +1870,13 @@
                 "title": "Implement notification service",
                 "created_at": "2025-03-05T11:30:00Z",
                 "updated_at": "2025-07-08T15:40:00Z",
-                "creator_id": 205,
+                "creator_id": "684024b2159fcd010189b649",
                 "column_values": {
                     "status_column": "planning",
                     "sprint_column": "sprint4",
                     "owners_column": [
-                        205,
-                        206
+                        "684024b2159fcd010189b649",
+                        "684024b2159fcd010189b64a"
                     ],
                     "priority_column": "low",
                     "due_date_column": null,
@@ -1887,7 +1887,7 @@
             }
         ],
         "loggedinUser": {
-            "_id": "201",
+            "_id": "684024b2159fcd010189b645",
             "fullname": "CEO Cat",
             "imgUrl": "/src/assets/Profile_pics_temporary/cat.jpg"
         }
