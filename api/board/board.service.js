@@ -1,4 +1,10 @@
-import { makeId, readJsonFile, writeJsonFile } from "../../services/utils.js"
+import { ObjectId } from 'mongodb'
+
+//import { makeId, readJsonFile, writeJsonFile } from "../../services/utils.js"
+
+import { dbService } from "../../services/db.service.js"
+import { asyncLocalStorage } from "../../services/als.service.js"
+import { loggerService } from "../../services/logger.service.js"
 
 export const boardService = {
     query,
@@ -9,47 +15,52 @@ export const boardService = {
 
 }
 
-const boards = readJsonFile('./data/boards.json')
+//const boards = readJsonFile('./data/boards.json')
 const PAGE_SIZE = 3
 
 
 async function query(filterBy) {
-    let boardsToDisplay = boards
+    //let boardsToDisplay = boards
 
     try {
-        if (filterBy.title) {
-            const regExp = new RegExp(filterBy.title, 'i')
-            boardsToDisplay = boardsToDisplay.filter(board => regExp.test(board.title))
-        }
+        const collection = await dbService.getCollection('boards')
+
+        var boardCursor = await collection.find()
+
+        // if (filterBy.title) {
+        //     const regExp = new RegExp(filterBy.title, 'i')
+        //     boardsToDisplay = boardsToDisplay.filter(board => regExp.test(board.title))
+        // }
 
 
-        if (filterBy.pageIdx !== undefined && !isNaN(filterBy.pageIdx)) {
-            const startIdx = filterBy.pageIdx * PAGE_SIZE
-            const endIdx = startIdx + PAGE_SIZE
-            boardsToDisplay = boardsToDisplay.slice(startIdx, endIdx)
-        }
+        // if (filterBy.pageIdx !== undefined && !isNaN(filterBy.pageIdx)) {
+        //     const startIdx = filterBy.pageIdx * PAGE_SIZE
+        //     const endIdx = startIdx + PAGE_SIZE
+        //     boardsToDisplay = boardsToDisplay.slice(startIdx, endIdx)
+        // }
 
-        if (filterBy.sortBy !== undefined) {
-            const sortBy = filterBy.sortBy
-            const sortOrder = filterBy.sortOrder || 1
+        // if (filterBy.sortBy !== undefined) {
+        //     const sortBy = filterBy.sortBy
+        //     const sortOrder = filterBy.sortOrder || 1
 
 
-            boardsToDisplay = boardsToDisplay.sort((a, b) => {
-                let result;
-                if (sortBy === 'title') {
-                    result = a.title.localeCompare(b.title)
-                } else if (sortBy === 'severity') {
-                    result = a.severity - b.severity
-                } else if (sortBy === 'creationDate') {
-                    result = new Date(b.creationDate) - new Date(a.creationDate)
-                }
-                return result * sortOrder
-            })
-        }
+        //     boardsToDisplay = boardsToDisplay.sort((a, b) => {
+        //         let result;
+        //         if (sortBy === 'title') {
+        //             result = a.title.localeCompare(b.title)
+        //         } else if (sortBy === 'severity') {
+        //             result = a.severity - b.severity
+        //         } else if (sortBy === 'creationDate') {
+        //             result = new Date(b.creationDate) - new Date(a.creationDate)
+        //         }
+        //         return result * sortOrder
+        //     })
+        // }
+        const boardsToDisplay = await boardCursor.toArray()
 
         return boardsToDisplay
-
     } catch (err) {
+        loggerService.error('Failed to query boards', err)
         throw err
     }
 }
@@ -57,15 +68,23 @@ async function query(filterBy) {
 async function getById(boardId) {
 
     try {
-        const board = boards.find(board => board._id === boardId)
-        if (!board) throw new Error('Cannot find board')
+        const criteria = { _id: ObjectId.createFromHexString(boardId) }
+
+        const collection = await dbService.getCollection('boards')
+        const board = await collection.findOne(criteria)
+
+        
         return board
     } catch (err) {
+        loggerService.error(`Failed to get board with id ${boardId}`, err)
         throw err
     }
 }
 
 async function remove(boardId, loggedinUser) {
+    const { loggedinUser } = asyncLocalStorage.getStore();
+    const { _id: userId, isAdmin } = loggedinUser;
+
     try {
         console.log("loggedinUser:", loggedinUser)
         const boardIdx = boards.findIndex(board => board._id === boardId)
