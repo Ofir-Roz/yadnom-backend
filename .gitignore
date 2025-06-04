@@ -4,5 +4,6 @@ logs
 **/.vscode/settings.json
 package-lock.json
 
+.env
 # Temporary for Render
 # data/
