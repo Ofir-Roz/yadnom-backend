@@ -12,7 +12,6 @@ export const boardService = {
     remove,
     save,
     removeComment,
-
 }
 
 //const boards = readJsonFile('./data/boards.json')
@@ -57,7 +56,7 @@ async function query(filterBy) {
         //     })
         // }
         const boardsToDisplay = await boardCursor.toArray()
-
+        
         return boardsToDisplay
     } catch (err) {
         loggerService.error('Failed to query boards', err)
@@ -73,7 +72,6 @@ async function getById(boardId) {
         const collection = await dbService.getCollection('boards')
         const board = await collection.findOne(criteria)
 
-        
         return board
     } catch (err) {
         loggerService.error(`Failed to get board with id ${boardId}`, err)
@@ -81,63 +79,71 @@ async function getById(boardId) {
     }
 }
 
-async function remove(boardId, loggedinUser) {
-    const { loggedinUser } = asyncLocalStorage.getStore();
-    const { _id: userId, isAdmin } = loggedinUser;
-
+async function remove(boardId) {
+    const store = asyncLocalStorage.getStore();
+    const loggedinUser = store?.loggedinUser;
     try {
-        console.log("loggedinUser:", loggedinUser)
-        const boardIdx = boards.findIndex(board => board._id === boardId)
-        console.log(boards[boardIdx].created_by)
-        if (boardIdx === -1) throw new Error('Cannot find board')
-        if (boards[boardIdx].created_by !== loggedinUser._id) {
-            console.log('Not your board:')
-            throw { status: 403, message: 'Not your board' }
+        const collection = await dbService.getCollection('boards');
+        const board = await collection.findOne({ _id: ObjectId.createFromHexString(boardId) });
+        if (!board) throw new Error('Cannot find board');
+        if (board.created_by !== loggedinUser._id && !loggedinUser.isAdmin) {
+            throw { status: 403, message: 'Not your board' };
         }
-        boards.splice(boardIdx, 1)
-        await saveBoardsToFile()
+        await collection.deleteOne({ _id: ObjectId.createFromHexString(boardId) });
+
+        return boardId;
     } catch (err) {
-        console.log('err:', err)
-        throw err
+        loggerService.error('Failed to remove board', err);
+        throw err;
     }
 }
 
 async function save(boardToSave) {
     try {
+        const collection = await dbService.getCollection('boards');
         if (boardToSave._id) {
-            const boardIdx = boards.findIndex(board => board._id === boardToSave._id)
-            if (boardIdx === -1) throw new Error('Cannot find board')
-            boards[boardIdx] = boardToSave
+            // Update existing board
+            const id = boardToSave._id;
+            boardToSave._id = ObjectId.createFromHexString(id);
+            await collection.updateOne(
+                { _id: boardToSave._id },
+                { $set: boardToSave }
+            );
+            boardToSave._id = id; // restore string id for return
         } else {
-            boardToSave._id = makeId()
-            boards.push(boardToSave)
+            // Insert new board
+            const res = await collection.insertOne(boardToSave);
+            boardToSave._id = res.insertedId.toString();
         }
-        await saveBoardsToFile()
-        return boardToSave
+
+        return boardToSave;
     } catch (err) {
-        throw err
+        loggerService.error('Failed to save board', err);
+        throw err;
     }
 }
 
 async function removeComment(boardId, taskId, commentId, loggedinUser) {
-
     try {
-        const board = await getById(boardId)
-        const task = board.tasks.find(task => task._id == taskId)
-        if (!task) throw new Error('Cannot find task')
-        const commentIdx = task.comments.findIndex(comment => comment._id == commentId)
-        if (commentIdx === -1) throw new Error('Cannot find comment')
-
-        if (task.comments[commentIdx].created_by != loggedinUser._id &&
-            board.created_by !== board.created_by != loggedinUser._id) {
-            throw { status: 403, message: 'Not your comment' }
+        const collection = await dbService.getCollection('boards');
+        const board = await collection.findOne({ _id: ObjectId.createFromHexString(boardId) });
+        if (!board) throw new Error('Cannot find board');
+        const task = board.tasks.find(task => task._id == taskId);
+        if (!task) throw new Error('Cannot find task');
+        const commentIdx = task.comments.findIndex(comment => comment._id == commentId);
+        if (commentIdx === -1) throw new Error('Cannot find comment');
+        if (task.comments[commentIdx].created_by != loggedinUser._id && board.created_by !== loggedinUser._id) {
+            throw { status: 403, message: 'Not your comment' };
         }
-
-        task.comments.splice(commentIdx, 1)
-        await saveBoardsToFile()
-
+        task.comments.splice(commentIdx, 1);
+        await collection.updateOne(
+            { _id: ObjectId.createFromHexString(boardId) },
+            { $set: { tasks: board.tasks } }
+        );
+        
     } catch (err) {
-        throw err
+        loggerService.error('Failed to remove comment', err);
+        throw err;
     }
 }
 
@@ -291,7 +297,7 @@ function getDefaultColumns() {
     return defaultColumns
 }
 
-function saveBoardsToFile() {
-    return writeJsonFile('./data/boards.json', boards)
-}
+// function saveBoardsToFile() {
+//     return writeJsonFile('./data/boards.json', boards)
+// }
 

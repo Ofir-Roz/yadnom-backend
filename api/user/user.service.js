@@ -1,4 +1,6 @@
-import { makeId, readJsonFile, writeJsonFile } from "../../services/utils.js"
+import { dbService } from '../../services/db.service.js'
+import { loggerService } from '../../services/logger.service.js'
+import { ObjectId } from 'mongodb'
 
 export const userService = {
     query,
@@ -6,106 +8,84 @@ export const userService = {
     getByUsername,
     remove,
     save,
-    
 }
 
-const users = readJsonFile('./data/users.json')
-const PAGE_SIZE = 3
-
-
-async function query(filterBy) {
-    let usersToDisplay = users
+async function query(filterBy = {}) {
+    // No filter/sort for now, just return all users
     try {
-        if (filterBy.fullname) {
-
-            const regExp = new RegExp(filterBy.fullname, 'i')
-            usersToDisplay = usersToDisplay.filter(user => regExp.test(user.fullname))
-        }
-        if (filterBy.username) {
-
-            const regExp = new RegExp(filterBy.username, 'i')
-            usersToDisplay = usersToDisplay.filter(user => regExp.test(user.username))
-        }
-        if (filterBy.pageIdx !== undefined && !isNaN(filterBy.pageIdx)) {
-            const startIdx = filterBy.pageIdx * PAGE_SIZE
-            const endIdx = startIdx + PAGE_SIZE
-            usersToDisplay = usersToDisplay.slice(startIdx, endIdx)
-        }
-
-        if (filterBy.sortBy !== undefined) {
-            const sortBy = filterBy.sortBy
-            const sortOrder = filterBy.sortOrder || 1
-
-            usersToDisplay = usersToDisplay.sort((a, b) => {
-                let result;
-                if (sortBy === 'fullname') {
-                    result = a.fullname.localeCompare(b.fullname)
-                } else if (sortBy === 'username') {
-                    result = a.username.localeCompare(b.username)
-                    // } else if (sortBy === 'creationDate') {
-                    //     result = new Date(b.creationDate) - new Date(a.creationDate)
-                }
-                return result * sortOrder
-            })
-        }
-
-        return usersToDisplay
-
+        const collection = await dbService.getCollection('users')
+        let users = await collection.find({}).toArray()
+        users = users.map(user => {
+            delete user.password
+            user.createdAt = user._id.getTimestamp()
+            return user
+        })
+        
+        return users
     } catch (err) {
+        loggerService.error('cannot find users', err)
         throw err
     }
 }
 
 async function getById(userId) {
     try {
-        const user = users.find(user => user._id === userId)
+        const collection = await dbService.getCollection('users')
+        const user = await collection.findOne({ _id: ObjectId.createFromHexString(userId) })
         if (!user) throw new Error('Cannot find user')
         return user
     } catch (err) {
+        loggerService.error(`while finding user by id: ${userId}`, err)
         throw err
     }
 }
 
 async function getByUsername(username) {
     try {
-        const user = users.find(user => user.username === username)
+        const collection = await dbService.getCollection('users')
+        const user = await collection.findOne({ username })
         if (!user) throw new Error('Cannot find user')
+        
         return user
     } catch (err) {
+        loggerService.error(`while finding user by username: ${username}`, err)
         throw err
     }
 }
 
 async function remove(userId) {
     try {
-        const userIdx = users.findIndex(user => user._id === userId)
-        if (userIdx === -1) throw new Error('Cannot find user')
-        users.splice(userIdx, 1)
-        await saveUsersToFile()
+        const collection = await dbService.getCollection('users')
+        await collection.deleteOne({ _id: ObjectId.createFromHexString(userId) })
+        
     } catch (err) {
-        console.log('err:', err)
+        loggerService.error(`cannot remove user ${userId}`, err)
+        throw err
     }
 }
 
 async function save(userToSave) {
     try {
+        const collection = await dbService.getCollection('users')
         if (userToSave._id) {
-            const userIdx = users.findIndex(user => user._id === userToSave._id)
-            if (userIdx === -1) throw new Error('Cannot find user')
-            Object.assign(users[userIdx], userToSave)
-            userToSave = users[userIdx]
+            // Update existing user
+            const id = userToSave._id
+            userToSave._id = ObjectId.createFromHexString(id)
+            await collection.updateOne(
+                { _id: userToSave._id },
+                { $set: userToSave }
+            )
+            userToSave._id = id // restore string id for return
         } else {
-            userToSave._id = makeId()
-            users.unshift(userToSave)
+            // Insert new user
+            const res = await collection.insertOne(userToSave)
+            userToSave._id = res.insertedId.toString()
         }
-        await saveUsersToFile()
+        delete userToSave.password
+        
         return userToSave
     } catch (err) {
+        loggerService.error('Failed to save user', err)
         throw err
     }
-}
-
-
-function saveUsersToFile() {
-    return writeJsonFile('./data/users.json', users)
 }

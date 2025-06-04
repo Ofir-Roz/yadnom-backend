@@ -44,6 +44,6 @@ export function emitBoardUpdate(boardId, updatedBoard) {
         return
     }
     const roomName = 'board:' + boardId
-    console.log(`Emitting board-updated to room: ${roomName}`)
+    loggerService.info(`Emitting board-updated to room: ${roomName}`)
     gIo.to(roomName).emit('board-updated', updatedBoard)
 }
