@@ -8,33 +8,45 @@ import { dirname } from 'path';
 import http from 'http'
 import { setupSocketAPI } from './services/socket.service.js'
 
+import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js'
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 
 const app = express()
 const server = http.createServer(app)
 
-const corsOptions = {
-    origin: [
-        'http://127.0.0.1:5173',
-        'http://localhost:5173',
-        'http://127.0.0.1:3000',
-        'http://localhost:3000'
-    ],
-    credentials: true
-}
-
-app.use(cors(corsOptions))
-
-//* Redirect to login page on first visit (must be before static files)
-app.get('/', (req, res) => {
-   res.redirect('/login');
-})
-
-app.use(express.static('public'))
+// Express App Config
 app.use(cookieParser())
 app.use(express.json())
+
+//* Redirect to welcome page only on first visit per session
+app.get('/', (req, res) => {
+    // Check session cookie (expires when browser closes)
+    if (!req.cookies.sessionVisited) {
+        res.cookie('sessionVisited', 'true', { httpOnly: true }); // No maxAge = session cookie
+        res.redirect('/welcome');
+    } else {
+        res.sendFile(path.resolve('public/index.html'));
+    }
+});
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.resolve('public')))
+} else {
+    const corsOptions = {
+        origin: [
+            'http://127.0.0.1:3000',
+            'http://localhost:3000',
+            'http://127.0.0.1:5173',
+            'http://localhost:5173'
+        ],
+        credentials: true
+    }
+    app.use(cors(corsOptions))
+}
+
+app.all('/**', setupAsyncLocalStorage)
 
 import { boardRouter } from './api/board/board.routes.js'
 import { userRouter } from './api/user/user.routes.js'
